@@ -5,6 +5,7 @@ import './App.css'
 import {Navigate, BrowserRouter, Route, Routes} from 'react-router-dom'
 import HomeView from './views/HomeView.jsx'
 import Nav from './components/Nav.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
             <Route path="/edit/:id" element={<Edit/>}/> */}
             
           </Routes>
+          <Footer></Footer>
   </BrowserRouter>
     </>
   )

@@ -1,0 +1,46 @@
+.alternate {
+    background-color: #233241;
+}
+
+footer {
+    width: 100vw;
+    padding: 150px 0;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.col.copyright {
+    font-weight: bold;
+}
+
+.copyright>.year {
+    color: #aaa;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 2px 0 5px;
+}
+
+.col.logo>img {
+    height: 150px;
+}
+
+.col.social {
+    display: flex;
+    gap: 50px;
+}
+
+.col.social>svg {
+    height: 30px;
+    cursor: pointer;
+
+    color: #ddd;
+
+    transition: color 0.3s;
+}
+
+.col.social>svg:hover {
+    color: white;
+}
