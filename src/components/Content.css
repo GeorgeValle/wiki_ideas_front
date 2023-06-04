@@ -1,3 +1,61 @@
+.enter-from-left {
+  transform: translateX(-100px);
+}
+
+section {
+  padding: 250px 0;
+}
+
+.negative {
+  background-color: #233241;
+  color: #fff;
+  width: 100%;
+  padding: 150px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  width: 100%;
+}
+
+ul.list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  height: 300px;
+}
+
+.list > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+
+  border-bottom: 1px solid #fff;
+  font-size: 2em;
+}
+
+.list > li > svg {
+  width: 80px;
+  height: 80px;
+}
+
+
+
+
+
+
 
 
 

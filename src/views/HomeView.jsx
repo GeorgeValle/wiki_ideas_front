@@ -5,7 +5,8 @@
 // import { faFacebook, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 //import Content from "../components/Content.jsx";
 //import { useLayoutEffect } from 'react';
-import Slogan from '../components/Slogan.jsx'
+import Slogan from '../components/Slogan.jsx';
+import Content from '../components/Content.jsx';
 
 
 const HomeView = () => {
@@ -14,7 +15,8 @@ const HomeView = () => {
 
     return (
         <>
-<Slogan></Slogan>
+        <Slogan></Slogan>
+        <Content></Content>
         </>
     );
 
