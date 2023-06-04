@@ -1,10 +1,10 @@
 .enter-from-left {
   transform: translateX(-100px);
-}
+} 
 
-section {
+/* section {
   padding: 250px 0;
-}
+} */
 
 .negative {
   background-color: #233241;
