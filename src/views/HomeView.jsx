@@ -7,6 +7,7 @@
 //import { useLayoutEffect } from 'react';
 import Slogan from '../components/Slogan.jsx';
 import Content from '../components/Content.jsx';
+import Phrases from '../components/Phrases.jsx';
 
 
 const HomeView = () => {
@@ -15,8 +16,9 @@ const HomeView = () => {
 
     return (
         <>
-        <Slogan></Slogan>
-        <Content></Content>
+        <Slogan/>
+        <Content/>
+        <Phrases/>
         </>
     );
 

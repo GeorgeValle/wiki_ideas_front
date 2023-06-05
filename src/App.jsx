@@ -17,9 +17,10 @@ function App() {
   <Routes>
             <Route path="/" element={<HomeView/>}/>
             <Route path="/wiki_ideas_front/" element={<Navigate to="/"/>}/>
-            {/* <Route path="/articles" element={<ArticlesContainer/>}/>
-            <Route path="/topic/:id" element={<Topics/>}/>
+            {/* <Route path="/articles" element={<ArticlesView/>}/>
+            <Route path="/articles/:id" element={<ArticleView/>}/>
             <Route path="/edit/:id" element={<Edit/>}/> */}
+            {/* <Route path="*" element={<HomeView/>}/> */}
             
           </Routes>
           <Footer></Footer>
