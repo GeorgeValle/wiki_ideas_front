@@ -6,6 +6,7 @@ import {Navigate, BrowserRouter, Route, Routes} from 'react-router-dom'
 import HomeView from './views/HomeView.jsx'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
+import ArticlesView from './views/ArticlesView.jsx'
 
 function App() {
   
@@ -17,8 +18,8 @@ function App() {
   <Routes>
             <Route path="/" element={<HomeView/>}/>
             <Route path="/wiki_ideas_front/" element={<Navigate to="/"/>}/>
-            {/* <Route path="/articles" element={<ArticlesView/>}/>
-            <Route path="/articles/:id" element={<ArticleView/>}/>
+            <Route path="/articles" element={<ArticlesView/>}/>
+            {/* <Route path="/articles/:id" element={<ArticleView/>}/>
             <Route path="/edit/:id" element={<Edit/>}/> */}
             {/* <Route path="*" element={<HomeView/>}/> */}
             
