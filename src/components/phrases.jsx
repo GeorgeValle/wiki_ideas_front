@@ -25,7 +25,7 @@ const Phrases = () => {
 
     return (
         <>
-            <section className="container">
+            <section className="phrase">
                 <div className={`home__form `}>
                     <div className="nav">
                         {
