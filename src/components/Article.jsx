@@ -7,7 +7,7 @@ const Article = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     const getArticles = async () => {
-        const response = await axios.get(`https://api.example.com/topic/search/${searchTerm}`);
+        const response = await axios.get(`https://wiki-ideas-back.fly.dev/topics/search/${searchTerm}`);
         setTopic(response.data);
     };
 
