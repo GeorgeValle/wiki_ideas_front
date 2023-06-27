@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import './SearchBar.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
@@ -10,24 +10,40 @@ const SearchBar =({setResults})=>{
 
     const [input, setInput] = useState("");
 
-    const fetchData = /*async*/(value)=>{
-        
-                    console.log(value);
-                    // const response = await axios.get(`https://wiki-ideas-back.fly.dev/topics/search/${value}`);
+    const fetchData = (value)=>{
+                
+                    // console.log(value);
+                    // const response =  axios.get(`https://wiki-ideas-back.fly.dev/topics/`)
+                    // .then(function (response) {
+                    //     setInput(response.data)
+                    // }).catch(function (error) {
+                    //     // handle error
+                    //     console.log(error);
+                    // })
+
+
+                    fetch(`https://wiki-ideas-back.fly.dev/topics/`)
+                        .then((response)=>response.json())
+                        .then((json)=>{
+                            const results = json.data.filter((topic)=>{
+                                return (
+                                    value && 
+                                    topic && 
+                                    topic.title && 
+                                    topic.title.toLowerCase().includes(value)
+                                );
+                            });
+                            console.log("filter topics: ",results);
+                            setResults(results)
+                        })
                     
-                    // setInput(response.data);
-                //     const results = response.data
-                //     setResults(results)
-                // }catch(e){
-                //     console.error(e);
-                // }
-                axios.get(`https://wiki-ideas-back.fly.dev/topics/search/${e.target.value}`)
-            .then(response => {
-                setResults(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+            //     axios.get(`https://wiki-ideas-back.fly.dev/topics/search/${e.target.value}`)
+            // .then(response => {
+            //     setResults(response.data);
+            // })
+            // .catch(error => {
+            //     console.error(error);
+            // });
 
     };
 
@@ -42,10 +58,10 @@ const SearchBar =({setResults})=>{
             <FontAwesomeIcon id="search-icon" icon={faMagnifyingGlass} />
             <input 
             placeholder="Type article to search..." 
-            
+            value={input}
             onChange={(e)=> handleChange(e.target.value)}/>
-            <div>Search Bar</div>
-            <div>search-bar result</div>
+            {/* <div>Search Bar</div>
+            <div>search-bar result</div> */}
         </div>
     )
 }
