@@ -5,6 +5,7 @@ import './ArticlesView.css';
 // import Article from '../components/Article.jsx';
 import SearchBar from '../components/SearchBar.jsx';
 import SearchResultsList from "../components/SearchResultsList.jsx";
+import TopicModal from "../components/TopicModal.jsx";
 //import SerchiBar from "../components/SerchiBar.jsx";
 // import Pochi from "../components/Pochi.jsx";
 // import "./ArticlesView.css";
@@ -12,6 +13,8 @@ import SearchResultsList from "../components/SearchResultsList.jsx";
 const Articles = () =>{
     //const {id} = useParams();
     const [results, setResults] = useState([]);
+    const [openModal, setOpenModal]= useState(false);
+    const [oneResult, setOneResult] = useState({})
     return (
         <>
         <div className="articles">
@@ -19,9 +22,12 @@ const Articles = () =>{
                 
                 {/* <SerchiBar></SerchiBar> */}
                 {/* <Pochi></Pochi> */}
-                <SearchBar setResults={setResults}/>
-                <SearchResultsList results={results}/>
+                <SearchBar setResults={setResults} />
+                <SearchResultsList results={results} setOpenModal={setOpenModal} setOneResult={setOneResult}/>   
             </div>
+            {openModal && (
+                    <TopicModal oneResult={oneResult}/>
+                )}
         </div>
 
 
