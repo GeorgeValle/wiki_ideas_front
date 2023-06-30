@@ -35,6 +35,7 @@ const SearchBar =({setResults})=>{
                             });
                             console.log("filter topics: ",results);
                             setResults(results)
+                            
                         })
                     
             //     axios.get(`https://wiki-ideas-back.fly.dev/topics/search/${e.target.value}`)
@@ -50,6 +51,7 @@ const SearchBar =({setResults})=>{
     const handleChange = (value)=>{
         setInput(value);
         fetchData(value);
+        
     };
 
 
