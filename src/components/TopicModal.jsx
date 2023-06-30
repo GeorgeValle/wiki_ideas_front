@@ -1,13 +1,20 @@
 import './TopicModal.css';
 
-const TopicModal =({oneResult})=>{
+const TopicModal =({oneResult, onClose})=>{
+
+    
+
 
     return(
         <>
-        <section className="modal_container">
+        <section className="modal_container"
+            onClick={(e)=>{
+                if(e.target.className === "modal_container"){onClose("click outside of windowsr")}}
+            }
+        >
             <article className="modal">
                 <header className="modal_header">
-                    <p className="close_modal">X</p>
+                    <p className="close_modal" onClick={()=>onClose("close windows")}>X</p>
                     
                 </header>
                 <main className="modal_content">

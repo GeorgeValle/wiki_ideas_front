@@ -1,7 +1,8 @@
 
 //import { useParams } from "react-router-dom";
-import {useState} from "react";
+import {useState} from 'react';
 import './ArticlesView.css';
+import {createPortal} from 'react-dom'
 // import Article from '../components/Article.jsx';
 import SearchBar from '../components/SearchBar.jsx';
 import SearchResultsList from "../components/SearchResultsList.jsx";
@@ -14,7 +15,16 @@ const Articles = () =>{
     //const {id} = useParams();
     const [results, setResults] = useState([]);
     const [openModal, setOpenModal]= useState(false);
-    const [oneResult, setOneResult] = useState({})
+    const [oneResult, setOneResult] = useState({});
+    const[message, setMessage] = useState("");
+
+    const handleButtonClick = (OneMessage) =>{
+        setOpenModal(false);
+        setMessage(OneMessage);
+        
+    }
+
+
     return (
         <>
         <div className="articles">
@@ -25,10 +35,15 @@ const Articles = () =>{
                 <SearchBar setResults={setResults} />
                 <SearchResultsList results={results} setOpenModal={setOpenModal} setOneResult={setOneResult}/>   
             </div>
-            {openModal && (
-                    <TopicModal oneResult={oneResult}/>
+            {openModal && 
+            createPortal(
+                    <TopicModal 
+                    oneResult={oneResult}
+                    onClose={handleButtonClick}
+                    />, document.body
                 )}
         </div>
+        <div><p>{message}</p></div>
 
 
         {/* <Article></Article> */}
