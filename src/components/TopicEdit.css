@@ -25,6 +25,27 @@
 
 
 
+#title_edit{
+    border:  #42a942 1px solid;
+    background: #ffffff;
+    border-radius: 5px;
+    font-size: 2.25rem;
+    width: 80%;
+    height: 100%;
+}
+
+
+
+#content_edit{
+    border:  #42a942 1px solid;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    resize: none;
+    width: 80%;
+    height: 40dvh;
+}
+
+
 .btn{
     border: none;
     color: #fff;
@@ -34,22 +55,21 @@
     box-shadow: 0px, 5px, 5px, #ccc;
     font-size: 1rem;
     
-    
 }
 
-.btn_edit{
+.btn_update{
     background-color: #42a942;
-    
 }
 
-.btn_delete{
+.btn_cancel{
     background-color: #d9534f;
 }
 
-.close_modal{
 
+
+.close_modal{
     cursor:pointer;
-    /* padding: 5px; */
+    /* padding: 1rem;
     border-radius: 50px; */
 }
 
@@ -60,12 +80,10 @@
 }
 
 .modal_content{
-    .modal_content{
     
-        height: 50dvh;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
+    height: 50dvh;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .modal_text{
@@ -76,7 +94,10 @@
 }
 
 .modal_buttons{
+    
+
     display:flex;
     justify-content: space-evenly;
-    padding:20px,20px;
+    
+    margin-bottom: 20px;
 }

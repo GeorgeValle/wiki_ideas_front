@@ -1,6 +1,6 @@
 import './TopicModal.css';
 
-const TopicModal =({oneResult, onClose})=>{
+const TopicModal =({oneResult, onClose, onEdit})=>{
 
     
 
@@ -9,7 +9,7 @@ const TopicModal =({oneResult, onClose})=>{
         <>
         <section className="modal_container"
             onClick={(e)=>{
-                if(e.target.className === "modal_container"){onClose("click outside of windowsr")}}
+                if(e.target.className === "modal_container"){onClose("click outside of windows")}}
             }
         >
             <article className="modal">
@@ -18,14 +18,15 @@ const TopicModal =({oneResult, onClose})=>{
                     
                 </header>
                 <main className="modal_content">
-                    <div className="modal_text" >
-                        <h1 className="modal_title">{oneResult.title}</h1>
-                        <p className="modal_content">{oneResult.content}</p>
-                    </div>
-                    <div className="modal_buttons">
-                        <button className="btn btn_edit" >Edit</button>
+                <div className="modal_buttons">
+                        <button className="btn btn_edit" onClick={()=>onEdit(oneResult)} >Edit</button>
                         <button  className="btn btn_delete">Delete</button>
                     </div>
+                    <div className="modal_text" >
+                        <h1 className="modal_title">{oneResult.title}</h1>
+                        <p className="modal_text">{oneResult.content}</p>
+                    </div>
+                    
                     
                 </main>
                 <footer className="modal_footer">
