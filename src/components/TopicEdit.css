@@ -19,35 +19,41 @@
     margin: 5rem;
     width: 90%;
     height: 80dvh;
+    
 
 
 }
 
-
+.label_edit{
+    font-size: 2.25rem;
+}
 
 #title_edit{
-    border:  #42a942 1px solid;
+    border:  #e0e0e0 1px solid;
     background: #ffffff;
     border-radius: 5px;
-    font-size: 2.25rem;
+    font-size: 1.25rem;
     width: 80%;
     height: 100%;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 
 
 #content_edit{
-    border:  #42a942 1px solid;
+    border:  #e0e0e0 1px solid;
     border-radius: 5px;
     font-size: 1.25rem;
     resize: none;
     width: 80%;
     height: 40dvh;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 
 .btn{
     border: none;
+    /* border:  #e0e0e0 1px solid; */
     color: #fff;
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
@@ -69,8 +75,19 @@
 
 .close_modal{
     cursor:pointer;
-    /* padding: 1rem;
-    border-radius: 50px; */
+    display: block;
+    position: absolute;
+    font-weight: bold;
+    color: #050505;
+    text-decoration: none;
+    width: 50px;
+    height: 45px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8px );
 }
 
 .modal_header{

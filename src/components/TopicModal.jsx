@@ -24,7 +24,7 @@ const TopicModal =({oneResult, onClose, onEdit})=>{
                     </div>
                     <div className="modal_text" >
                         <h1 className="modal_title">{oneResult.title}</h1>
-                        <p className="modal_text">{oneResult.content}</p>
+                        <p className="modal_text_content">{oneResult.content}</p>
                     </div>
                     
                     
