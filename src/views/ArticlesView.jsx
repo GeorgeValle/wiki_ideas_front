@@ -8,6 +8,8 @@ import SearchBar from '../components/SearchBar.jsx';
 import SearchResultsList from "../components/SearchResultsList.jsx";
 import TopicModal from "../components/TopicModal.jsx";
 import TopicEdit from "../components/TopicEdit.jsx";
+import TopicNew from '../components/TopicNew.jsx';
+import ButtonCreateTopic from '../components/ButtonCreateTopic.jsx';
 //import SerchiBar from "../components/SerchiBar.jsx";
 // import Pochi from "../components/Pochi.jsx";
 // import "./ArticlesView.css";
@@ -17,6 +19,7 @@ const Articles = () =>{
     const [results, setResults] = useState([]);
     const [openModal, setOpenModal]= useState(false);
     const [openEditModal, setOpenEditModal]= useState(false);
+    const [openCreateModal, setOpenCreateModal]= useState(false);
     const [oneResult, setOneResult] = useState({});
     const[message, setMessage] = useState("");
 
@@ -41,6 +44,11 @@ const Articles = () =>{
         
     }
 
+    const handleButtonCreate = (OneMessage) =>{
+        setOpenCreateModal(false);
+        setMessage(OneMessage);
+    }
+
 
 
 
@@ -53,6 +61,7 @@ const Articles = () =>{
                 
                 {/* <SerchiBar></SerchiBar> */}
                 {/* <Pochi></Pochi> */}
+                <ButtonCreateTopic setOpenCreateModal={setOpenCreateModal}/>
                 <SearchBar setResults={setResults} />
                 <SearchResultsList results={results} setOpenModal={setOpenModal} setOneResult={setOneResult}/>   
             </div>
@@ -70,6 +79,15 @@ const Articles = () =>{
                     oneResult={oneResult}
                     
                     onClose={handleButtonEditClose}
+
+                    />, document.body
+                )}
+                {openCreateModal && 
+            createPortal(
+                    <TopicNew 
+                    
+                    
+                    onClose={handleButtonCreate}
 
                     />, document.body
                 )}
