@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import "./TopicNew.css";
+import UsePost from "./UsePost.js";
 function TopicNew({ onClose}) {
 
     //const [message, setMessage] = useState("");
@@ -12,7 +13,8 @@ function TopicNew({ onClose}) {
     const onSubmitHandler = (event) => {
         event.preventDefault()
         onClose("submit")
-        console.log("Final new",responseBody)
+        //console.log("Final new",responseBody)
+        UsePost(responseBody)
 	//Form submission happens here
     }
 
@@ -37,13 +39,12 @@ function TopicNew({ onClose}) {
                         <div className="modal_buttons">
                         <button type="submit" className="btn btn_create"  >Create Topic</button>
                         <button  className="btn btn_reset" type="reset" onClick={() => onClose()}>Reset</button>
-                                
+                            
                         </div>
                         <div><label className="label_new" htmlFor="title_new">Title:</label></div>
                         <div><input id="title_new" name="title" onChange={(e)=>inputChangeHandler(e)} placeholder="Type a new title" type="text"/></div>
                         <div><label className="label_new" htmlFor="content_new">Content:</label></div>
                         <div><textarea id="content_new" name="content"   onChange={(e)=>inputChangeHandler(e)} placeholder="Type the content topic" /></div>
-                            
                             
                         </form>
                     </main>
