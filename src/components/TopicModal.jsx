@@ -1,9 +1,17 @@
 import './TopicModal.css';
+import UseDelete from './UseDelete.js';
 
 const TopicModal =({oneResult, onClose, onEdit})=>{
 
     
+    const buttonDeleteHandler = (id) => {
+        //const {name, value} = event.target
+        UseDelete(id);
+        onClose("topic-delete");
+        //setResponseBody({...responseBody, [name]: value})
 
+
+    }
 
     return(
         <>
@@ -20,7 +28,7 @@ const TopicModal =({oneResult, onClose, onEdit})=>{
                 <main className="modal_content">
                 <div className="modal_buttons">
                         <button className="btn btn_edit" onClick={()=>onEdit(oneResult)} >Edit</button>
-                        <button  className="btn btn_delete">Delete</button>
+                        <button  className="btn btn_delete" onClick={()=>buttonDeleteHandler(oneResult._id)}>Delete</button>
                     </div>
                     <div className="modal_text" >
                         <h1 className="modal_title">{oneResult.title}</h1>

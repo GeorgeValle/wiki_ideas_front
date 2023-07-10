@@ -9,9 +9,9 @@ export default function ButtonCreateTopic({setOpenCreateModal}) {
     return (
     <>
         <article>
-            <button className="btn btn_create" onClick={()=>handleOpen()}> Create  New Topic </button>
             <p className="description_button_create">Let your mind fly</p>
-
+            <button className="btn btn_create" onClick={()=>handleOpen()}> Create  New Topic </button>
+            <p className='separator_button_create'>-</p>
         </article>    
     </>
     )

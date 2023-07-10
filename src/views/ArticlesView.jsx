@@ -25,6 +25,7 @@ const Articles = () =>{
 
     const handleButtonClick = (OneMessage) =>{
         setOpenModal(false);
+        setResults([])
         setMessage(OneMessage);
         
     }
@@ -50,10 +51,6 @@ const Articles = () =>{
     }
 
 
-
-
-
-
     return (
         <>
         <div className="articles">
@@ -63,7 +60,7 @@ const Articles = () =>{
                 {/* <Pochi></Pochi> */}
                 <ButtonCreateTopic setOpenCreateModal={setOpenCreateModal}/>
                 <SearchBar setResults={setResults} />
-                <SearchResultsList results={results} setOpenModal={setOpenModal} setOneResult={setOneResult}/>   
+                <SearchResultsList results={results} setOpenModal={setOpenModal} setOneResult={setOneResult}/>  
             </div>
             {openModal && 
             createPortal(
