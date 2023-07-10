@@ -56,15 +56,20 @@ const SearchBar =({setResults})=>{
 
 
     return(
-        <div className="input-wrapper">
-            <FontAwesomeIcon id="search-icon" icon={faMagnifyingGlass} />
-            <input 
-            placeholder="Type article to search..." 
-            value={input}
-            onChange={(e)=> handleChange(e.target.value)}/>
-            {/* <div>Search Bar</div>
-            <div>search-bar result</div> */}
-        </div>
+        <>
+        <article>
+            <p className="description_search_bar">Read amazing articles</p>
+            <div className="input-wrapper">
+                <FontAwesomeIcon id="search-icon" icon={faMagnifyingGlass} />
+                <input 
+                placeholder="Type article to search..." 
+                value={input}
+                onChange={(e)=> handleChange(e.target.value)}/>
+                {/* <div>Search Bar</div>
+                <div>search-bar result</div> */}
+            </div>
+        </article>
+        </>
     )
 }
 // const SearchBar = () => {

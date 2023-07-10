@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import "./TopicEdit.css";
+import UseEdit from './UseEdit.js';
+
 function TopicEdit({oneResult, onClose}) {
 
     //const [message, setMessage] = useState("");
@@ -12,7 +14,8 @@ function TopicEdit({oneResult, onClose}) {
     const onSubmitHandler = (event) => {
         event.preventDefault()
         onClose(responseBody)
-        console.log("Final",responseBody)
+        //console.log("Final",responseBody)
+        UseEdit(responseBody)
 	//Form submission happens here
     }
 

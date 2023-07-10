@@ -1,20 +1,28 @@
 .description_button_create{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin: 0;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
     padding: 0;
-    border-bottom: 1px solid #fff;
+    
     font-size: 2em;
-    line-height: 3;
     letter-spacing: 0.7px;
+}
+
+.separator_button_create{
+    line-height: 3;
+    font-size: 2em;
+    color: transparent;
+    border-bottom: 1px solid transparent;
 }
 
 .btn{
     border: none;
     /* border:  #e0e0e0 1px solid; */
     color: #fff;
+    margin-left: 3rem;
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
@@ -25,4 +33,5 @@
 
 .btn_create{
     background-color: #42a942;
+
 }
