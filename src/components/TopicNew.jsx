@@ -28,7 +28,7 @@ function TopicNew({ onClose}) {
                     }
                 }
             >
-                <article className="modal">
+                <article className="modal-new">
                     <header className="modal_header">
                         <p className="close_modal" onClick={() => onClose("close in button")}>X</p>
 
