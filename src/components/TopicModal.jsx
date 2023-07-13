@@ -20,7 +20,7 @@ const TopicModal =({oneResult, onClose, onEdit})=>{
                 if(e.target.className === "modal_container"){onClose("click outside of windows")}}
             }
         >
-            <article className="modal">
+            <article className="modal-topic">
                 <header className="modal_header">
                     <p className="close_modal" onClick={()=>onClose("close windows")}>X</p>
                     

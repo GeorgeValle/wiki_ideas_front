@@ -1,0 +1,12 @@
+.dialog_message{
+    position:fixed;
+    top:100;
+    right: 100px;
+    height: 30px;
+    max-width: 200px;
+    border-radius:10px;
+    background: #233241;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    padding: 10px 20px;
+    
+}

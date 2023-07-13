@@ -12,17 +12,24 @@
 
 }
 
-.modal{
+.modal-topic{
     background: linear-gradient(180deg, #fff 0%, #e0e0e0 100%);
     border-radius: 5px;
     padding: 2rem;
     margin: 5rem;
     width: 90%;
     height: 80dvh;
-
-
+    z-index: 1;
+    position: absolute;
+    backface-visibility: hidden;
+    animation: init 1s linear;
+    transform-style: preserve-3d;
 }
 
+@keyframes init{
+    from{transform: rotateY(0deg)}
+    to{transform: rotateY(70deg)}
+}
 
 
 .btn{

@@ -29,7 +29,7 @@ function TopicEdit({oneResult, onClose}) {
                     }
                 }
             >
-                <article className="modal">
+                <article className="modal-edit">
                     <header className="modal_header">
                         <p className="close_modal" onClick={() => onClose(oneResult)}>X</p>
 
