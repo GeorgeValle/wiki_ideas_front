@@ -2,7 +2,7 @@
 // import { useEffect } from 'react';
 import './DialogMessage.css'
 
-export default function DialogMessage({children,setOpenDialog,openDialog}) {
+export default function DialogMessage({children,setOpenDialog,isOpen}) {
 
     const dialogPop = () => {
 
@@ -14,11 +14,19 @@ export default function DialogMessage({children,setOpenDialog,openDialog}) {
 
         timer();
     }
-
+    // {isOpen? && open}
     return (
-        <article>
-            <dialog className='dialog_message' open={openDialog}>
+        <article >
+            <dialog className='dialog_message' >
+                <header className="dialog-header">
+                </header>
+                <main className="dialog-main">
                 {children}
+                </main>
+                <footer>
+
+                </footer>
+                
             </dialog>
         </article>
     )
