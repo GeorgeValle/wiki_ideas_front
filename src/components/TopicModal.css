@@ -22,7 +22,7 @@
     z-index: 1;
     position: absolute;
     backface-visibility: hidden;
-    animation: init 1s linear;
+    animation: init 0.7s linear;
     transform-style: preserve-3d;
 }
 

@@ -1,17 +1,31 @@
 import './TopicModal.css';
 import UseDelete from './UseDelete.js';
+import DialogModal from './DialogModal.jsx';
+import { useState } from 'react'
 
 const TopicModal =({oneResult, onClose, onEdit})=>{
-
     
-    const buttonDeleteHandler = (id) => {
-        //const {name, value} = event.target
+    const [openDialog, setOpenDialog]= useState(false);
+    const [id, setId] = useState("");
+    const question = 'are you sure you want to "Delete" this post?';
+    
+    const buttonDeleteHandler = (OneId) => {
+        setId(OneId);
+        setOpenDialog(true);
+    }
+
+    const handleCloseDialog = (oneMessage) =>{
+        setOpenDialog(false);
+        
+        console.log(oneMessage);
+    };
+
+    const dialogHandler = () => {
+
         UseDelete(id);
         onClose("topic-delete");
-        //setResponseBody({...responseBody, [name]: value})
-
-
     }
+
 
     return(
         <>
@@ -42,6 +56,7 @@ const TopicModal =({oneResult, onClose, onEdit})=>{
                 </footer>
             </article>
         </section>
+        {openDialog &&( <DialogModal openDialog={openDialog} closeModal={handleCloseDialog} messageQuestion={question} handleModals={dialogHandler}/>)}
         </>
     )
 

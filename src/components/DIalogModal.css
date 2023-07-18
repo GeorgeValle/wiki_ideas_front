@@ -1,0 +1,84 @@
+
+.dialog_container{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+    display:none;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(180deg, #fff 0%, #e0e0e0 100%); */
+    background-color:  rgba(0,0,0,0.5);
+}
+
+.open_modal{
+    display:flex;
+}
+
+.dialog_modal{
+    z-index: 10;
+    margin: 40px;
+    background: linear-gradient(180deg, #fff 0%, #e0e0e0 100%);
+    border: gray 2px solid;
+    border-radius: 1rem;
+    box-shadow: 0px, 5px, 5px, #ccc;
+    padding: 0.5rem 1rem;
+}
+
+
+.btn{
+    margin: 20px;
+    border: none;
+    /* border:  #e0e0e0 1px solid; */
+    /* gap: 10px; */
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px, 5px, 5px, #ccc;
+    font-size: 1rem;
+    
+}
+
+.btn_accept{
+    background-color: #42a942;
+}
+
+.btn_cancel{
+    background-color: #d9534f;
+}
+
+
+
+/* .dialog_header{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-bottom: 2rem;
+    text-align: center;
+    
+} */
+
+.dialog_question{
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.dialog_main{
+    
+    
+    padding: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dialog_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

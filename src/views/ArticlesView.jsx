@@ -11,6 +11,7 @@ import TopicEdit from "../components/TopicEdit.jsx";
 import TopicNew from '../components/TopicNew.jsx';
 import DialogMessage from '../components/DialogMessage.jsx';
 import ButtonCreateTopic from '../components/ButtonCreateTopic.jsx';
+import DialogModal from '../components/DialogModal.jsx';
 //import SerchiBar from "../components/SerchiBar.jsx";
 // import Pochi from "../components/Pochi.jsx";
 // import "./ArticlesView.css";
@@ -22,14 +23,15 @@ const Articles = () =>{
     const [openEditModal, setOpenEditModal]= useState(false);
     const [openCreateModal, setOpenCreateModal]= useState(false);
     const [oneResult, setOneResult] = useState({});
-    const [openDialog, setOpenDialog]= useState(false);
+    
+    
     const [message, setMessage] = useState("");
 
     const handleButtonClick = (OneMessage) =>{
         setOpenModal(false);
         setResults([])
         setMessage(OneMessage);
-        setOpenDialog(true);
+        
         
     }
 
@@ -51,8 +53,16 @@ const Articles = () =>{
     const handleButtonCreate = (OneMessage) =>{
         setOpenCreateModal(false);
         setMessage(OneMessage);
-        setOpenDialog(true);
+        //setOpenDialog(true);
     }
+
+    // const handleCloseDialog = () =>{
+    //     setOpenDialog(false);
+    // };
+
+    // const handleOpenDialog = (isOpen, closeModal, messageQuestion, handleModals) =>{
+
+    // }
 
 
     return (
@@ -97,9 +107,9 @@ const Articles = () =>{
         {/* <div><p>{message}</p></div> */}
 
         
-                <DialogMessage setOpenDialog={setOpenDialog} openDialog={openDialog}>
-                    {message}
-                </DialogMessage>
+                {/* <DialogMessage setOpenDialog={setOpenDialog} isOpen={openDialog}>
+                    
+                </DialogMessage> */}
 
         {/* <Article></Article> */}
         

@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import "./TopicEdit.css";
 import UseEdit from './UseEdit.js';
+import DialogModal from './DialogModal.jsx';
 
-function TopicEdit({oneResult, onClose}) {
+const TopicEdit = ({oneResult, onClose}) => {
 
     //const [message, setMessage] = useState("");
     const [responseBody, setResponseBody] = useState(oneResult);
+    const [openDialog, setOpenDialog]= useState(false);
+    const [message, setMessage] = useState("");
+    const question = "are you sure you want to overwrite this post?";
 
     const inputChangeHandler = (event) => {
         const {name, value} = event.target
@@ -13,9 +17,22 @@ function TopicEdit({oneResult, onClose}) {
     }
     const onSubmitHandler = (event) => {
         event.preventDefault()
+        setOpenDialog(true);
+    }
+
+    const handleCloseDialog = (oneMessage) =>{
+        setOpenDialog(false);
+        setMessage(oneMessage);
+        console.log(message);
+    };
+    
+
+    const dialogHandler = (oneMessage) => {
         onClose(responseBody)
         //console.log("Final",responseBody)
+        setMessage(oneMessage);
         UseEdit(responseBody)
+        
 	//Form submission happens here
     }
 
@@ -55,6 +72,8 @@ function TopicEdit({oneResult, onClose}) {
                     </footer>
                 </article>
             </section >
+            {openDialog &&( <DialogModal openDialog={openDialog} closeModal={handleCloseDialog} messageQuestion={question} handleModals={dialogHandler}/>)}
+                    
         </>
     )
 }

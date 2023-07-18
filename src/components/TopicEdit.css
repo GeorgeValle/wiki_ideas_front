@@ -23,7 +23,7 @@
     position: absolute;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    animation: finish 1s linear;
+    animation: finish 0.7s linear;
 }
 
 @keyframes finish{
