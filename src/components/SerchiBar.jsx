@@ -32,8 +32,6 @@ const SerchiBar =()=>{
             value={input} 
             onChange={(e)=> handleChange(e.target.value)}/>
             <input type="button" onClick={(e)=>handleSubmit(e)} value="Search"/>
-            {/* <div>Search Bar</div>
-            <div>search-bar result</div> */}
         </div>
 
             <ul>

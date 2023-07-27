@@ -1,29 +1,25 @@
 import './DialogModal.css'
 
-const DialogModal = ({openDialog, closeModal, messageQuestion, handleModals})=>{
+const DialogModal = ({ closeModal, messageQuestion, handleModals})=>{
 
-
-    // const [ closeModal, messageQuestion, handleModals ] = props
     
-    const handleClose = (message)=>{
+    const handleClose = ()=>{
         
         handleModals()
-        closeModal(message);
-        
+        closeModal();        
     };
 
     return(
-        <section className={`dialog_container ${openDialog && 'open_modal' }`}>
+        <section className={`dialog_container `}>
             <article className="dialog_modal">
                 <div className="dialog_header">
-                
                 </div>
                 <div className="dialog_main">
                     <p className="dialog_question">{messageQuestion}</p>
                 </div>
                 <div className="dialog_footer">
-                    <button className="btn btn_accept" onClick={()=>handleClose("Accepted")} >Accept</button>
-                    <button  className="btn btn_cancel" onClick={()=>closeModal("Canceled")}>Cancel</button>
+                    <button className="btn btn_accept" onClick={()=>handleClose()} >Accept</button>
+                    <button  className="btn btn_cancel" onClick={()=>closeModal()}>Cancel</button>
                 </div>
             </article>
         </section>

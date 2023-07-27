@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import "./TopicNew.css";
 import UsePost from "./UsePost.js";
-function TopicNew({ onClose}) {
+function TopicNew({ onCreate,onClose}) {
 
-    //const [message, setMessage] = useState("");
     const [responseBody, setResponseBody] = useState({});
 
     const inputChangeHandler = (event) => {
@@ -12,8 +11,7 @@ function TopicNew({ onClose}) {
     }
     const onSubmitHandler = (event) => {
         event.preventDefault()
-        onClose("submit")
-        //console.log("Final new",responseBody)
+        onCreate("Article has been created")
         UsePost(responseBody)
 	//Form submission happens here
     }
@@ -24,13 +22,13 @@ function TopicNew({ onClose}) {
         <>
             <section className="modal_container"
                 onClick={(e) => {
-                    if (e.target.className === "modal_container") { onClose("close out side") }
+                    if (e.target.className === "modal_container") { onClose() }
                     }
                 }
             >
                 <article className="modal-new">
                     <header className="modal_header">
-                        <p className="close_modal" onClick={() => onClose("close in button")}>X</p>
+                        <p className="close_modal" onClick={() => onClose()}>X</p>
 
                     </header>
 

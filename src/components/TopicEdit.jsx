@@ -5,10 +5,8 @@ import DialogModal from './DialogModal.jsx';
 
 const TopicEdit = ({oneResult, onClose}) => {
 
-    //const [message, setMessage] = useState("");
     const [responseBody, setResponseBody] = useState(oneResult);
     const [openDialog, setOpenDialog]= useState(false);
-    const [message, setMessage] = useState("");
     const question = "are you sure you want to overwrite this post?";
 
     const inputChangeHandler = (event) => {
@@ -20,17 +18,14 @@ const TopicEdit = ({oneResult, onClose}) => {
         setOpenDialog(true);
     }
 
-    const handleCloseDialog = (oneMessage) =>{
+    const handleCloseDialog = () =>{
         setOpenDialog(false);
-        setMessage(oneMessage);
-        console.log(message);
     };
     
 
-    const dialogHandler = (oneMessage) => {
-        onClose(responseBody)
-        //console.log("Final",responseBody)
-        setMessage(oneMessage);
+    const dialogHandler = () => {
+        const oneMessage = "Article edited successfully"
+        onClose(responseBody,oneMessage)
         UseEdit(responseBody)
         
 	//Form submission happens here
@@ -42,13 +37,13 @@ const TopicEdit = ({oneResult, onClose}) => {
         <>
             <section className="modal_container"
                 onClick={(e) => {
-                    if (e.target.className === "modal_container") { onClose(oneResult) }
+                    if (e.target.className === "modal_container") { onClose(oneResult,"Edit mode closed") }
                     }
                 }
             >
                 <article className="modal-edit">
                     <header className="modal_header">
-                        <p className="close_modal" onClick={() => onClose(oneResult)}>X</p>
+                        <p className="close_modal" onClick={() => onClose(oneResult,"Edit mode closed")}>X</p>
 
                     </header>
 
@@ -72,7 +67,7 @@ const TopicEdit = ({oneResult, onClose}) => {
                     </footer>
                 </article>
             </section >
-            {openDialog &&( <DialogModal openDialog={openDialog} closeModal={handleCloseDialog} messageQuestion={question} handleModals={dialogHandler}/>)}
+            {openDialog &&( <DialogModal  closeModal={handleCloseDialog} messageQuestion={question} handleModals={dialogHandler}/>)}
                     
         </>
     )
