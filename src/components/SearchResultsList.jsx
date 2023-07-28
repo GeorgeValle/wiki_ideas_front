@@ -1,6 +1,4 @@
-//import React from 'react'
 import './SearchResultsList.css';
-// import './searchResult.css';
 import SearchResult from './SearchResult.jsx';
 
 
@@ -21,11 +19,6 @@ const SearchResultsList =({results, setOpenModal, setOneResult}) => {
         {  
         results.map((result) =>{
 
-             //results.map((result.title, result.content, result._id) => {  
-            
-            // return <div onClick={()=> handleChange(result)} className="search-result" key={result._id}>
-            // {result.title} 
-            // </div>
             return  <SearchResult  result={result} onClicking={handleChange} key={result._id}/>
             })
         }

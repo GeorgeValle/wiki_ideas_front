@@ -1,12 +1,29 @@
 .dialog_message{
+    display:none;
     position:fixed;
-    top:100;
-    right: 100px;
+    top:50;
+    right: 50px;
     height: 30px;
-    max-width: 200px;
+    max-width: 250px;
     border-radius:10px;
+    color: white;
+    /* border: rgb(233, 228, 228) 2px solid; */
+    border:  #e0e0e0 1px solid;
     background: #233241;
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    box-shadow: 0px, 5px, 5px, #ccc;
     padding: 10px 20px;
+    z-index: 101;
+}
+
+.dialog_text{
+    font-size: 0.7rem;
+}
+
+.open_dialog_message{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     
 }

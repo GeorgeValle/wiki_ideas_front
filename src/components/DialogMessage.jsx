@@ -2,30 +2,30 @@
 // import { useEffect } from 'react';
 import './DialogMessage.css'
 
-export default function DialogMessage({children,setOpenDialog,isOpen}) {
+export default function DialogMessage({isOpen,dialogMessage,isClose}) {
 
-    const dialogPop = () => {
+    // const dialogPop = () => {
 
-            const timer = setTimeout(() => {
-                setOpenDialog(false);
-            }, 2000);
+    //         const timer = setTimeout(() => {
+    //             setIsOpen();
+    //         }, 2000);
             
         
 
-        timer();
-    }
+        // timer();
+
+
+        
+            setTimeout(() => {
+                isClose();
+            }, 4000)
+    
     // {isOpen? && open}
     return (
         <article >
-            <dialog className='dialog_message' >
-                <header className="dialog-header">
-                </header>
-                <main className="dialog-main">
-                {children}
-                </main>
-                <footer>
-
-                </footer>
+            <dialog open className={`dialog_message ${isOpen&&"open_dialog_message"} `}>
+                
+                <p className="dialog_text">{dialogMessage}</p>
                 
             </dialog>
         </article>

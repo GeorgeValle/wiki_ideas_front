@@ -14,16 +14,14 @@ const TopicModal =({oneResult, onClose, onEdit})=>{
         setOpenDialog(true);
     }
 
-    const handleCloseDialog = (oneMessage) =>{
+    const handleCloseDialog = () =>{
         setOpenDialog(false);
-        
-        console.log(oneMessage);
     };
 
     const dialogHandler = () => {
 
         UseDelete(id);
-        onClose("topic-delete");
+        onClose("Article has been deleted");
     }
 
 
@@ -31,12 +29,12 @@ const TopicModal =({oneResult, onClose, onEdit})=>{
         <>
         <section className="modal_container"
             onClick={(e)=>{
-                if(e.target.className === "modal_container"){onClose("click outside of windows")}}
+                if(e.target.className === "modal_container"){onClose("Article Closed")}}
             }
         >
             <article className="modal-topic">
                 <header className="modal_header">
-                    <p className="close_modal" onClick={()=>onClose("close windows")}>X</p>
+                    <p className="close_modal" onClick={()=>onClose("Article Closed")}>X</p>
                     
                 </header>
                 <main className="modal_content">
@@ -56,11 +54,10 @@ const TopicModal =({oneResult, onClose, onEdit})=>{
                 </footer>
             </article>
         </section>
-        {openDialog &&( <DialogModal openDialog={openDialog} closeModal={handleCloseDialog} messageQuestion={question} handleModals={dialogHandler}/>)}
+        {openDialog &&( <DialogModal  closeModal={handleCloseDialog} messageQuestion={question} handleModals={dialogHandler}/>)}
         </>
     )
 
-    
 }
 
 export default TopicModal;

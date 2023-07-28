@@ -1,19 +1,14 @@
 
 .dialog_container{
+    display:flex;
     position:fixed;
     left:0;
     top:0;
     width:100%;
     height: 100%;
-    display:none;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(180deg, #fff 0%, #e0e0e0 100%); */
     background-color:  rgba(0,0,0,0.5);
-}
-
-.open_modal{
-    display:flex;
 }
 
 .dialog_modal{
@@ -30,8 +25,6 @@
 .btn{
     margin: 20px;
     border: none;
-    /* border:  #e0e0e0 1px solid; */
-    /* gap: 10px; */
     color: #fff;
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
@@ -50,18 +43,6 @@
 }
 
 
-
-/* .dialog_header{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    margin-bottom: 2rem;
-    text-align: center;
-    
-} */
-
 .dialog_question{
     padding: 1rem;
     margin: 1rem;
@@ -70,8 +51,6 @@
 }
 
 .dialog_main{
-    
-    
     padding: 10px;
     margin-bottom: 2rem;
     text-align: center;

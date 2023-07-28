@@ -11,7 +11,7 @@ import TopicEdit from "../components/TopicEdit.jsx";
 import TopicNew from '../components/TopicNew.jsx';
 import DialogMessage from '../components/DialogMessage.jsx';
 import ButtonCreateTopic from '../components/ButtonCreateTopic.jsx';
-import DialogModal from '../components/DialogModal.jsx';
+// import DialogModal from '../components/DialogModal.jsx';
 //import SerchiBar from "../components/SerchiBar.jsx";
 // import Pochi from "../components/Pochi.jsx";
 // import "./ArticlesView.css";
@@ -23,14 +23,14 @@ const Articles = () =>{
     const [openEditModal, setOpenEditModal]= useState(false);
     const [openCreateModal, setOpenCreateModal]= useState(false);
     const [oneResult, setOneResult] = useState({});
-    
-    
     const [message, setMessage] = useState("");
+    const [isOpenModalMessage, setIsOpenModalMessage] = useState(false)
 
     const handleButtonClick = (OneMessage) =>{
         setOpenModal(false);
         setResults([])
         setMessage(OneMessage);
+        setIsOpenModalMessage(true)
         
         
     }
@@ -42,28 +42,28 @@ const Articles = () =>{
         setOneResult(result)
     }
 
-    const handleButtonEditClose = (result) =>{
+    const handleButtonEditClose = (result,oneMessage) =>{
 
         setOneResult(result);
         setOpenEditModal(false);
         setOpenModal(true);
-        
+        setMessage(oneMessage)
+        setIsOpenModalMessage(true) 
     }
 
     const handleButtonCreate = (OneMessage) =>{
         setOpenCreateModal(false);
         setMessage(OneMessage);
-        //setOpenDialog(true);
+        setIsOpenModalMessage(true);
     }
 
-    // const handleCloseDialog = () =>{
-    //     setOpenDialog(false);
-    // };
+    const handleButtonCloseCreate = () =>{
+        setOpenCreateModal(false);
+    }
 
-    // const handleOpenDialog = (isOpen, closeModal, messageQuestion, handleModals) =>{
-
-    // }
-
+    const handleCloseMessage = ()=>{
+        setIsOpenModalMessage(false);
+    }
 
     return (
         <>
@@ -97,11 +97,12 @@ const Articles = () =>{
             createPortal(
                     <TopicNew 
                     
-                    
-                    onClose={handleButtonCreate}
+                    onCreate={handleButtonCreate}
+                    onClose={handleButtonCloseCreate}
 
                     />, document.body
                 )}
+                {isOpenModalMessage &&(<DialogMessage isOpen={isOpenModalMessage} dialogMessage={message} isClose={handleCloseMessage}/>)}
         </div>
 
         {/* <div><p>{message}</p></div> */}
