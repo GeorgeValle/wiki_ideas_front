@@ -5,8 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
 
-
-const SearchBar =({setResults})=>{
+const SearchBar =({setResults,setIsLoading})=>{
 
     const [input, setInput] = useState("");
 
@@ -21,7 +20,7 @@ const SearchBar =({setResults})=>{
                     //     console.log(error);
                     // })
 
-
+                    setIsLoading(true)
                     fetch(`https://wiki-ideas-back.fly.dev/topics/`)
                         .then((response)=>response.json())
                         .then((json)=>{
@@ -33,10 +32,15 @@ const SearchBar =({setResults})=>{
                                     topic.title.toLowerCase().includes(value)
                                 );
                             });
+
                             console.log("filter topics: ",results);
                             setResults(results)
                             
-                        })
+                        }).catch((error) => {
+                            console.log (error)})
+                            .finally( ()=>setIsLoading(false))
+                        
+
                     
             //     axios.get(`https://wiki-ideas-back.fly.dev/topics/search/${e.target.value}`)
             // .then(response => {
