@@ -7,7 +7,6 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(180deg, #fff 0%, #e0e0e0 100%); */
     background-color:  rgba(0,0,0,0.5);
 
 }
@@ -63,7 +62,6 @@
 
 .btn{
     border: none;
-    /* border:  #e0e0e0 1px solid; */
     color: #fff;
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
@@ -107,7 +105,6 @@
 }
 
 .modal_content{
-    
     height: 50dvh;
     margin-bottom: 2rem;
     text-align: center;
@@ -121,10 +118,7 @@
 }
 
 .modal_buttons{
-    
-
     display:flex;
     justify-content: space-evenly;
-    
     margin-bottom: 20px;
 }
