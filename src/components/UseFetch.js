@@ -9,12 +9,7 @@ export  function UseFetch(searchTerm){
     useEffect(()=>{
         if(searchTerm){
             setLoading(true);
-            // let baseURL="https://wiki-ideas-back.fly.dev/"
-            // let url = "topics/search/"
-            // let params=searchTerm
             axios.get(`https://wiki-ideas-back.fly.dev/topics/search/${searchTerm}`)
-            // axios.get(baseURL,url,searchTerm)
-            // .then((response)=>response.json())
             .then(function (response) {
                 setData(response.data),setMessage(response.message)
             })

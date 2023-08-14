@@ -4,12 +4,9 @@ import SearchResult from './SearchResult.jsx';
 
 const SearchResultsList =({results, setOpenModal, setOneResult}) => {
     //const entries = Object.entries(results);
-    // console.log("Result in list:", results)
 
-    const handleChange = (value)=>{
-        
+    const handleChange = (value)=>{  
         setOneResult(value)
-        // console.log("value one result:", value)
         setOpenModal(true);
     }
     return (
